@@ -10,7 +10,7 @@ const button = document.getElementById("button");
 
 const warning1 = document.getElementById("warning-1"); //Card Number
 const warning2 = document.getElementById("warning-2"); //MM-YY
-const warning4 = document.getElementById("warning-3"); //CVC
+const warning3 = document.getElementById("warning-3"); //CVC
 
 
 //Display Items
@@ -21,29 +21,104 @@ const mm = document.getElementById("card-mm");
 const yy = document.getElementById("card-yy");
 
 
-
-function onInput(){
-
+function onNameInput(){
     nameDisplay.innerText = nameInput.value;
-    number.innerText = numberInput.value;
-    cvc.innerText = cvcInput.value;
-    mm.innerText = mInput.value;
-    yy.innerText = yInput.value;
 
+    if(isNaN(nameInput.value)){
+        nameInput.style.borderColor = "hsl(278, 68%, 11%)";
+        return true;
+
+    }else{
+        nameInput.style.borderColor = "hsl(0, 100%, 66%)";
+    }
     //Error
 }
-function onButtonClick(){
-    if(mInput.value == ""){
+
+
+
+function onNumberInput(){
+    number.innerText = numberInput.value;
+
+    if(isNaN(numberInput.value)){
+        numberInput.style.borderColor = "hsl(0, 100%, 66%)";
+        warning1.innerText = "Wrong format, numbers only";
+        warning1.style.visibility = "visible";
+    }else if(numberInput.value === ""){
+        numberInput.style.borderColor = "hsl(0, 100%, 66%)";
+        warning1.innerText = "This area can't be blank";
+        warning1.style.visibility = "visible";
+    }else{
+        numberInput.style.borderColor = "hsl(278, 68%, 11%)";
+        warning1.style.visibility = "hidden";
+        return true;
+    }
+}
+
+function onMYInput(){
+    var mR = false;
+    var yR = false;
+    mm.innerText = mInput.value;
+    yy.innerText = yInput.value;
+    if(mInput.value === ""){
         mInput.style.borderColor = "hsl(0, 100%, 66%)";
         warning2.style.visibility = "visible";
+        warning2.innerText = "Can't be blank";
+    }else if(mInput.value > 12){
+        mInput.style.borderColor = "hsl(0, 100%, 66%)";
+        warning2.style.visibility = "visible";
+        warning2.innerText = "Month can't be bigger than 12";
+    }else if(isNaN(mInput.value)){
+        mInput.style.borderColor = "hsl(0, 100%, 66%)";
+        warning2.style.visibility = "visible";
+        warning2.innerText = "Please enter numbers.";
     }else{
         mInput.style.borderColor = "hsl(278, 68%, 11%)";
+        warning2.style.visibility = "hidden";
+        mR = true;
     }
-    if(yInput.value == ""){
+    if(yInput.value === ""){
         yInput.style.borderColor = "hsl(0, 100%, 66%)";
-    }else{
-        mInput.style.borderColor = "hsl(278, 68%, 11%)";
+        warning2.style.visibility = "visible";
+    }else if(isNaN(yInput.value)){
+        yInput.style.borderColor = "hsl(0, 100%, 66%)";
+        warning2.style.visibility = "visible";
+        warning2.innerText = "Please enter numbers.";
     }
+    else if(yInput.value < 23){
+        yInput.style.borderColor = "hsl(0, 100%, 66%)";
+        warning2.style.visibility = "visible";
+        warning2.innerText = "Year can't be lower than 23";
+    }
+    else{
+        yInput.style.borderColor = "hsl(278, 68%, 11%)";
+        warning2.style.visibility = "hidden";
+        yR = true;
+    }
+    return mR && yR;
+}
+
+function onCVCInput(){
+    cvc.innerText = cvcInput.value;
+    if(cvcInput.value === ""){
+        cvcInput.style.borderColor = "hsl(0, 100%, 66%)";
+        warning3.style.visibility = "visible";
+        warning3.innerText = "Can't be blank";
+    }else if(isNaN(cvcInput.value)){
+        cvcInput.style.borderColor = "hsl(0, 100%, 66%)";
+        warning3.style.visibility = "visible";
+        warning3.innerText = "Please Enter Numbers";
+    }else{
+        cvcInput.style.borderColor = "hsl(278, 68%, 11%)";
+        warning3.style.visibility = "hidden";
+        return true;
+    }
+
+}
+function onButtonClick(){
+    if (onCVCInput() && onMYInput() && onNameInput() && onNumberInput()){
+        onFade();
+    }
+
 }
 function onFade(){
     form.style.color = "rgba(0,0,0,0)";

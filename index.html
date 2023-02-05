@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
     <!--CSS Files-->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="media.css">
 
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,9 +50,9 @@
         <form id="form" class="cc-form" action="submit">
             <div class="inline-form-div">
                 <span class="exp-area">C A R D H O L D E R &nbsp N A M E</span>
-                <input oninput="onInput()" id="holder-name" class="input name" type="text" placeholder="e.g. Jane Applessed">
+                <input oninput="onNameInput()" id="holder-name" class="input name" type="text" placeholder="e.g. Jane Applessed">
                 <span class="exp-area">C A R D  &nbsp N U M B E R</span>
-                <input maxlength="19" oninput="onInput()" id="card-number" class="input" type="text" placeholder="e.g. 1234 5678 9123 0000">
+                <input maxlength="16" oninput="onNumberInput()" id="card-number" class="input" type="text" placeholder="e.g. 1234 5678 9123 0000">
                 <span id="warning-1" class="warning">Wrong format, numbers only</span>
             </div>
 
@@ -66,13 +67,13 @@
                 </div>
                 <div class="inline">
                     <div>
-                        <input maxlength="2" oninput="onInput()" id="mm" class="time input" type="text" placeholder="MM">
-                        <input maxlength="2" oninput="onInput()" id="yy" class="time input" type="text" placeholder="YY">
+                        <input maxlength="2" oninput="onMYInput()" id="mm" class="time input" type="text" placeholder="MM">
+                        <input maxlength="2" oninput="onMYInput()" id="yy" class="time input" type="text" placeholder="YY">
                         <span id="warning-2" class="warning">Can't be blank</span>
 
                     </div>
                     <div>
-                        <input maxlength="3" oninput="onInput()" id="cvc" class="cvc input" type="text" placeholder="e.g. 123">
+                        <input maxlength="3" oninput="onCVCInput()" id="cvc" class="cvc input" type="text" placeholder="e.g. 123">
                         <span id="warning-3" class="warning">Can't be blank</span>
 
                     </div>
