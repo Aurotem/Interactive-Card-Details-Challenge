@@ -1,0 +1,10 @@
+/*Cards Seciton*/
+.cards-div{
+    background-image: url("/images/bg-main-desktop.png");
+    background-size: 100%;
+    width: 30%;
+    height: 100%;
+}
+.card-front{
+    background-image: url("/images/bg-card-front.png");
+}
