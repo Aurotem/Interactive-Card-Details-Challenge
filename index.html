@@ -5,28 +5,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card-Details</title>
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
     <!--CSS Files-->
     <link rel="stylesheet" href="styles.css">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <div class="cards-div">
         <div class="card-front">
+            <div class="card-front-inner">
+            <div class="card-top">
+                <img id="card-logo" src="images/card-logo.svg" alt="">
+            </div>
+            <div class="card-middle">
+                <span id="cardD-number">0000 0000 0000 0000</span>
+            </div>
+            <div class="card-bottom">
+                <div>
+                    <span id="card-name"></span>
+                </div>
+                <div class="card-exp">
+                    <span id="card-mm">00</span>
+                    <span id="card-msy">/</span>
+                    <span id="card-yy">00</span>
+                </div>
 
+            </div>
+        </div>
         </div>
 
         <div class="card-back">
-
+            <div class="bcard-middle">
+                <span id="card-cvc">000</span>
+            </div>
         </div>
     </div>
     <div class="form-div">
-        <form class="cc-form" action="submit">
-            <input class="name-input" type="text">
-            <input class="number-input" type="text">
-            <input class="month-input" type="text">
-            <input class="year-input" type="text">
-            <input class="cvc-input" type="text">
-            <button></button>
+        <form id="form" class="cc-form" action="submit">
+            <div class="inline-form-div">
+                <span class="exp-area">C A R D H O L D E R &nbsp N A M E</span>
+                <input oninput="onInput()" id="holder-name" class="input name" type="text" placeholder="e.g. Jane Applessed">
+                <span class="exp-area">C A R D  &nbsp N U M B E R</span>
+                <input maxlength="19" oninput="onInput()" id="card-number" class="input" type="text" placeholder="e.g. 1234 5678 9123 0000">
+                <span id="warning-1" class="warning">Wrong format, numbers only</span>
+            </div>
+
+            <div class="inline-form-div2">
+                <div class="inline">
+                    <div>
+                        <span class="exp-area">E X P . &nbsp D A T E &nbsp( MM / YY )</span>
+                    </div>
+                    <div>
+                        <span class="exp-area">C V C</span>
+                    </div>
+                </div>
+                <div class="inline">
+                    <div>
+                        <input maxlength="2" oninput="onInput()" id="mm" class="time input" type="text" placeholder="MM">
+                        <input maxlength="2" oninput="onInput()" id="yy" class="time input" type="text" placeholder="YY">
+                        <span id="warning-2" class="warning">Can't be blank</span>
+
+                    </div>
+                    <div>
+                        <input maxlength="3" oninput="onInput()" id="cvc" class="cvc input" type="text" placeholder="e.g. 123">
+                        <span id="warning-3" class="warning">Can't be blank</span>
+
+                    </div>
+
+                </div>
+            </div>
+                    <div>
+                        <button id="button" type="button" onclick="onButtonClick()" class="button">Confirm</button>
+                    </div>
         </form>
+        <div id="accept">
+
+        </div>
     </div>
     
     <!--JavaScript-->
