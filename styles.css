@@ -21,7 +21,7 @@ body{
 /*Front Card Start*/
 .card-front{
     position: absolute;
-    background-image: url("/images/bg-card-front.png");
+    background-image: url("images/bg-card-front.png");
     background-size: 100%;
     height: 245px;
     width: 447px;
@@ -38,7 +38,7 @@ body{
     grid-template-rows: 60% 30% 10%;
 }
 .card-middle{
-    font-size: 26px;
+    font-size: 170%;
     align-self: center;
     font-weight: lighter;
 }
@@ -116,7 +116,42 @@ body{
     width: 400px;
     height: 400px;
     text-align: left;
+    transition: 0.5s;
 }
+/*This will appear when the information is accepted and cc-form is dissappeared*/
+.accept{
+    transform: translate(4rem,2rem);
+    visibility: hidden;
+    display:none;
+    position: absolute;
+    align-self: center;
+    place-self: center;
+    display: grid;
+    grid-template:
+    "a"
+    "b"
+    "c";
+    width: 400px;
+    height: 350px;
+    text-align: center;
+}
+.ty-img{
+    width: 5rem;
+    place-self: center;
+    margin-bottom: 1rem;
+}
+.thankyou{
+    font-size: 24px;
+    font-weight: 500;
+}
+.ty-detail{
+    padding-bottom: 2rem;
+    color: hsl(279, 6%, 55%);
+}
+#ty-button{
+    margin-top:0;
+}
+/*-----------------------------------------------------------------------------*/
 .input{
     height: 45px;
     width: 96.4%;

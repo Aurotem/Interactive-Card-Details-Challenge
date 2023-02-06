@@ -20,12 +20,15 @@ const cvc = document.getElementById("card-cvc");
 const mm = document.getElementById("card-mm");
 const yy = document.getElementById("card-yy");
 
+//Accept Screen
+const accept = document.getElementById("accept");
+
 
 function onNameInput(){
     nameDisplay.innerText = nameInput.value;
 
     if(isNaN(nameInput.value)){
-        nameInput.style.borderColor = "hsl(278, 68%, 11%)";
+        nameInput.style.borderColor = "hsl(279, 6%, 55%)";
         return true;
 
     }else{
@@ -48,7 +51,7 @@ function onNumberInput(){
         warning1.innerText = "This area can't be blank";
         warning1.style.visibility = "visible";
     }else{
-        numberInput.style.borderColor = "hsl(278, 68%, 11%)";
+        numberInput.style.borderColor = "hsl(279, 6%, 55%)";
         warning1.style.visibility = "hidden";
         return true;
     }
@@ -72,7 +75,7 @@ function onMYInput(){
         warning2.style.visibility = "visible";
         warning2.innerText = "Please enter numbers.";
     }else{
-        mInput.style.borderColor = "hsl(278, 68%, 11%)";
+        mInput.style.borderColor = "hsl(279, 6%, 55%)";
         warning2.style.visibility = "hidden";
         mR = true;
     }
@@ -90,7 +93,7 @@ function onMYInput(){
         warning2.innerText = "Year can't be lower than 23";
     }
     else{
-        yInput.style.borderColor = "hsl(278, 68%, 11%)";
+        yInput.style.borderColor = "hsl(279, 6%, 55%)";
         warning2.style.visibility = "hidden";
         yR = true;
     }
@@ -108,7 +111,7 @@ function onCVCInput(){
         warning3.style.visibility = "visible";
         warning3.innerText = "Please Enter Numbers";
     }else{
-        cvcInput.style.borderColor = "hsl(278, 68%, 11%)";
+        cvcInput.style.borderColor = "hsl(279, 6%, 55%)";
         warning3.style.visibility = "hidden";
         return true;
     }
@@ -123,14 +126,19 @@ function onButtonClick(){
 function onFade(){
     form.style.color = "rgba(0,0,0,0)";
     mInput.style.borderColor = "rgba(0,0,0,0)";
+    mInput.style.color = "rgba(0,0,0,0)";
     mInput.classList.add("fadeph");
     yInput.style.borderColor = "rgba(0,0,0,0)";
+    yInput.style.color = "rgba(0,0,0,0)";
     yInput.classList.add("fadeph");
     nameInput.style.borderColor = "rgba(0,0,0,0)";
+    nameInput.style.color = "rgba(0,0,0,0)";
     nameInput.classList.add("fadeph");
     numberInput.style.borderColor = "rgba(0,0,0,0)";
+    numberInput.style.color = "rgba(0,0,0,0)";
     numberInput.classList.add("fadeph");
     cvcInput.style.borderColor = "rgba(0,0,0,0)";
+    cvcInput.style.color = "rgba(0,0,0,0)";
     cvcInput.classList.add("fadeph");
     button.style.backgroundColor = "rgba(0,0,0,0)";
     button.style.borderColor = "rgba(0,0,0,0)";
@@ -138,4 +146,5 @@ function onFade(){
 }
 function setDisplayNone(){
     form.style.display = "none";
+    accept.style.visibility = "visible";
 }

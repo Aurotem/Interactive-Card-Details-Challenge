@@ -1,15 +1,85 @@
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
 body{
     grid-template:
     "a"
     "b";
-    grid-template-rows: 30% 70%;
+    grid-template-rows: 15rem 35rem;
 }
-.cards-div{
-
+/*Cards*/
+.card-front{
+    height: 150px;
+    width: 275px;
+    transform: translate(16px,120px);
+    z-index: 20;
 }
+.card-front-inner{
+    height: 75%;
+}
+#card-logo{
+width: 25%;
+}
+.card-middle{
+font-size: 18px;
+margin-bottom: 8px;
+}
+.card-bottom{
+    font-size: 10px;
+}
+.card-back{
+    height: 150px;
+    width: 275px;
+    transform: translate(70px,30px);
+    z-index: 10;
+}
+.bcard-middle{
+    font-size: 12px;
+    font-weight: 300;
+}
+/*Form*/
 
 .form-div{
-    padding: 0;
+    margin-top: 0rem;
+    padding: 5% 2% 5% 2%;
 }
+.cc-form{
+    transform: translate(0,-3rem);
+    width: 20rem;
+    height: 20rem;
+}
+.exp-area{
+    font-size: 0.7rem;
+}
+.input{
+    width: 20rem;
+    height: 2.5rem;
+    font-size: 1rem;
+}
+.time{
+    width: 4rem;
+    height: 2.5rem;
+}
+.cvc{
+    width: 9.5rem;
+    height: 2.5rem;
+}
+.button{
+    width: 20rem;
+    height: 3rem;
+}
+/*Accept*/
+.accept{
+    transform: translate(0,-3rem);
+}
+.ty-detail{
+    padding: 0;
+    height: 0.1rem;
+}
+.thankyou{
+    height: 0.1rem;
+}
+#ty-button{
+    place-self: center;
+    transform: translate(0,-1.5rem);
+}
+
 }
